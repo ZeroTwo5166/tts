@@ -7,6 +7,12 @@ const speedInput = document.getElementById('speed')
 const highlightText = document.getElementById('highlightText');
 let currentCharacter; 
 var speechLanguage = "en-US"; //Default langugage set to en-US
+let backgroundOne = document.getElementById("backgroundOne");
+let backgroundTwo = document.getElementById("backgroundTwo");
+let body = document.querySelector("body");
+
+
+
 //var highlightArray;
 var text = ""; //text variable, same as highlightText.innertext which is used to use substring function and highlight words
 
@@ -61,8 +67,7 @@ function handleBoundary(event) {
     const word = text.substring(wordStart, wordEnd);
     const markedText = text.substring(0, wordStart) + '<mark>' + word + '</mark>' + text.substring(wordEnd);
     highlightText.innerHTML = markedText;
-  }
-
+}
 
 
 function playText(text) {
@@ -89,4 +94,17 @@ function stopText() {
 
 function getSelectedValue() {
     speechLanguage = document.getElementById("language").value;
+}
+
+
+backgroundOne.addEventListener('input', () => {
+  setGradientColor(body);
+});
+
+backgroundTwo.addEventListener('input', () => {
+  setGradientColor(body);
+});
+
+function setGradientColor(area) {
+  area.style.background = "linear-gradient(to right, " + backgroundOne.value + ", " + backgroundTwo.value + ")";
 }
