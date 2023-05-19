@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text-to-Speech Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particles-js">
+		<div class="container">
+			<h1>Text-to-Speech Website</h1>
+				<label>Insert text here:</label>
+				<textarea type="text" id="userText"></textarea>
+					<div>
+					<label>Select Voice: </label>
+					<select id="language" onchange="getSelectedValue()">
+						<option value="da-DK">Danish</option>
+						<option value="de-DE">Deutsch</option>
+						<option value="en-US" selected="selected">English US</option>
+						<option value="en-GB">English UK Male</option>
+						<option value="hi-IN">Hindi</option>
+						<option value="ja-JP">Japanese</option>
+					</select></br>				
+					Speed: <input type="number" id="speed" max="10" min="-10" value="1"/>
+					</div>
+				<br/>
+				<span>
+					<button id="readBtn">Read</button> 
+					<button id="pauseBtn">Pause</button> 
+					<button id="stopBtn">Stop</button> 									
+				</span>
+				<br/></br>
+				<div  id="highlightText">		
+				</div>
+        </div>	
+	</div>
+	<script src="script.js"> </script>
+	<script src="particles.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
