@@ -27,11 +27,11 @@ playButton.addEventListener('click', () => {
 })
 pauseButton.addEventListener('click', pauseText);
 
-/*stopButton.addEventListener('click', stopText)
+stopButton.addEventListener('click', stopText)
 speedInput.addEventListener('input', () => {
   stopText();
   playText(utterance.text.substring())
-}) */
+}) 
 
 const utterance = new SpeechSynthesisUtterance()
 utterance.addEventListener('end', () => {
@@ -88,8 +88,8 @@ function pauseText() {
 }
 
 function stopText() {
-  speechSynthesis.resume()
-  speechSynthesis.cancel()
+  speechSynthesis.resume();
+  speechSynthesis.cancel();
 }
 
 function getSelectedValue() {
